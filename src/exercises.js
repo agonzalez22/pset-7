@@ -11,7 +11,7 @@ function endsMeet(values, n) {
 }
 
 function difference(numbers) {
-  // write your code here
+  //sometimes i wonder where my life went wrong then i remember it was always like that
 }
 
 function max(number) {
