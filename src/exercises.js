@@ -15,7 +15,27 @@ function commonEnd(a, b) {
 }
 
 function endsMeet(values, n) {
-  // write your code here
+  let newA = []
+
+  if (!values || values.length < n || !(n % 1 === 0) || n <= 0) {
+    return newA;
+  } else {
+    if (n === 0) {
+      return values;
+    } else {
+      for (let x = 0; x < n; x++) {
+        if (values[x] !== undefined) {
+          newA.push(values[x]);
+        }
+      }
+      for (let x = n; x > 0; x--) {
+        if (values[values.length - x] !== undefined) {
+          newA.push(values[values.length - x]);
+        }
+      }
+      return newA;
+    }
+  }
 }
 
 function difference(numbers) {
