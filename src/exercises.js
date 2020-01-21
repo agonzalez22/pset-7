@@ -113,7 +113,64 @@ function increasing(numbers) {
 }
 
 function everywhere(values, x) {
-  // write your code here
+  let flag;
+  if (!values || values.length < 1 || !x) {
+    return false;
+  } else {
+    for (let y = 0; y < values.length - 1; y++) {
+      if (values[y].isNaN) {
+        flag = false;
+        return false;
+      }
+    }
+
+    let first;
+    let second;
+    let third;
+
+    for (let i = 0; i < values.length - 1; i++) {
+      if (i === 0) {
+        if (values[i] === x) {
+          flag = true;
+        } else if (values[i + 1] === x) {
+          flag = true;
+        } else {
+          flag = false;
+          return false;
+        }
+      } else if (i === (values.length - 1)) {
+        if (values[i] === x) {
+          flag = true;
+        } else if (values[i - 1]) {
+          flag = true;
+        } else {
+          flag = false;
+          return false;
+        }
+      } else {
+        second = values[i];
+        first = values[i - 1];
+        third = values[i + 1];
+
+        if (second === x) {
+          flag = true;
+        } else if (first === x) {
+          flag = true;
+        } else if (third === x) {
+          flag = true;
+        } else {
+          flag = false;
+          return false;
+        }
+      }
+    }
+
+    if (flag === false) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }
 
 function consecutive(numbers) {
