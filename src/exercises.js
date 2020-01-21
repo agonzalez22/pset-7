@@ -39,10 +39,15 @@ function endsMeet(values, n) {
 }
 
 function difference(numbers) {
-  //sometimes i wonder where my life went wrong then i remember it was always like that
-  //every day i wonder why was i born because i am such a waste of space please end me
-  //my dog slipped down the stairs today it was kinda sad
-  //i sold my soul to the devil for free spotify 
+  if (!numbers || numbers.some(isNaN) || numbers.length < 1) {
+    return undefined;
+  } else {
+    let maximum = Number(Math.max.apply(null, numbers));
+    let minimum = Number(Math.min.apply(null, numbers));
+    let difference = maximum - minimum
+
+    return difference;
+  }
 }
 
 function max(number) {
