@@ -83,7 +83,33 @@ function middle(values) {
 }
 
 function increasing(numbers) {
-  // write your code here
+  if (!numbers || numbers.length < 3) {
+    return false;
+  }
+  let flag = false;
+  for (let i = 0; i < numbers.length - 2; i++) {
+    let index = Number.isInteger(numbers[i]);
+    if (index === false) {
+      return false;
+    }
+    let first = numbers[i];
+    let second = numbers[i + 1];
+    let third = numbers[i + 2];
+    let indexsecond = Number.isInteger(second);
+    let indexthird = Number.isInteger(third);
+
+    if (indexsecond === false || indexthird === false) {
+      return false;
+    }
+    if (first < second && second < third) {
+      flag = true;
+    }
+  }
+  if (flag) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function everywhere(values, x) {
