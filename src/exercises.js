@@ -51,7 +51,22 @@ function difference(numbers) {
 }
 
 function max(number) {
-  // write your code here
+  if (!number || number.length % 2 === 0 || number.length < 3 || number.some(isNaN)) {
+    return undefined;
+  } else {
+    let newA = [];
+    newA.push(number[0]);
+
+    let mid = Math.floor(number.length / 2);
+    newA.push(number[mid]);
+
+    let end = number[number.length - 1];
+    newA.push(end);
+
+    let max = Number(Math.max.apply(null, newA));
+
+    return max;
+  }
 }
 
 function middle(values) {
