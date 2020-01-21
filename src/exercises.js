@@ -196,9 +196,49 @@ function consecutive(numbers) {
 }
 
 function balance(numbers) {
-  // write your code here
-  console.log("test");
+  let flag;
+  let sum = 0;
+  let halfSum;
+  let balanceSum = 0;
+
+  if (!numbers || numbers.length < 2 || numbers.some(isNaN)) {
+    flag = false;
+    return false;
+  } else {
+    for (let i = 0; i < numbers.length - 1; i++) {
+      if (Number.isInteger(numbers[i]) === false) {
+        flag = false;
+        return false;
+      }
+    }
+
+    for (let x = 0; x < numbers.length; x++) {
+      sum += numbers[x];
+    }
+
+    halfSum = sum / 2;
+
+    if (sum % 2 === 1) {
+      flag = false;
+      return false;
+    }
+
+    for (let z = 0; z < numbers.length - 1; z++) {
+      balanceSum += numbers[z];
+      if (balanceSum === halfSum) {
+        flag = true;
+        return true;
+      }
+    }
+
+    if (flag === true) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
+
 
 function clumps(values) {
   // write your code here
