@@ -70,7 +70,16 @@ function max(number) {
 }
 
 function middle(values) {
-  // write your code here
+  if (!values || values.length % 2 === 0 || values.length < 3) {
+    return [];
+  } else {
+    let newA = [];
+
+    let middle = Math.floor(values.length / 2);
+    newA.push(values[middle - 1], values[middle], values[middle + 1]);
+
+    return newA;
+  }
 }
 
 function increasing(numbers) {
